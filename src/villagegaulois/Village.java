@@ -4,6 +4,8 @@ import personnages.Chef;
 import personnages.Gaulois;
 import java.util.ArrayList;
 
+import exceptions.VillageSansChefException;
+
 public class Village {
 	private String nom;
 	private Chef chef;
@@ -46,6 +48,9 @@ public class Village {
 	}
 
 	public String afficherVillageois() {
+		if (this.chef == null) {
+			throw new VillageSansChefException("Il n'y a pas de chef dans le village.");
+		}
 		StringBuilder chaine = new StringBuilder();
 		if (nbVillageois < 1) {
 			chaine.append("Il n'y a encore aucun habitant au village du chef " + chef.getNom() + ".\n");
