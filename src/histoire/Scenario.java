@@ -39,7 +39,7 @@ public class Scenario {
 			System.out.println(etalFleur.acheterProduit(10, abraracourcix));
 			System.out.println(etalFleur.acheterProduit(15, obelix));
 			System.out.println(etalFleur.acheterProduit(15, assurancetourix));
-		} catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException | IllegalStateException e) {
 			e.printStackTrace();
 		}
 		System.out.println(village.partirVendeur(bonemine));

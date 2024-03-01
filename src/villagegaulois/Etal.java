@@ -55,7 +55,10 @@ public class Etal {
 		if (quantiteAcheter < 1) {
 			throw new IllegalArgumentException("La quantité à acheter doit être positive.");
 		}
-		
+		if(!this.isEtalOccupe())
+		{
+			throw new IllegalStateException("L'étal doit être occupé.");
+		}
 		StringBuilder chaine = new StringBuilder();
 		try {
 			chaine.append(acheteur.getNom() + " veut acheter " + quantiteAcheter
